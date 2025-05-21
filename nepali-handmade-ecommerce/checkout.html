@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout - Your Nepali Products</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="w3-container w3-padding-32 w3-center">
+  <h2>Checkout</h2>
+
+  <div id="checkout-items" class="w3-margin-bottom">
+    <!-- Cart items will be loaded here -->
+  </div>
+
+  <form class="w3-container w3-card-4 w3-light-grey w3-text-black w3-margin" onsubmit="return placeOrder(event)">
+    <h3>Shipping Information</h3>
+    <p>
+      <label>Name</label>
+      <input class="w3-input w3-border" type="text" required id="shipping-name">
+    </p>
+    <p>
+      <label>Address</label>
+      <input class="w3-input w3-border" type="text" required id="shipping-address">
+    </p>
+    <p>
+      <label>Phone</label>
+      <input class="w3-input w3-border" type="tel" required id="shipping-phone">
+    </p>
+    <p>
+      <button class="w3-button w3-green" type="submit">Place Order</button>
+    </p>
+  </form>
+
+  <div id="order-confirmation" class="w3-panel w3-pale-green w3-border w3-hide">
+    ✅ Your order has been placed! Thank you for shopping with us.
+  </div>
+</div>
+
+<script>
+  function loadCheckoutItems() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const container = document.getElementById("checkout-items");
+
+    if (cart.length === 0) {
+      container.innerHTML = "<p>Your cart is empty.</p>";
+      return;
+    }
+
+    let html = "<ul class='w3-ul'>";
+    let total = 0;
+    cart.forEach(item => {
+      html += `<li>${item.name} – रु ${item.price} x ${item.quantity}</li>`;
+      total += item.price * item.quantity;
+    });
+    html += `</ul><p><strong>Total: रु ${total}</strong></p>`;
+
+    container.innerHTML = html;
+  }
+
+  function placeOrder(e) {
+    e.preventDefault();
+
+    // Normally, you'd send this data to your server
+    localStorage.removeItem("cart");
+
+    document.getElementById("order-confirmation").classList.remove("w3-hide");
+    e.target.reset();
+
+    setTimeout(() => {
+      document.getElementById("order-confirmation").classList.add("w3-hide");
+      window.location.href = "index.html";
+    }, 4000);
+
+    return false;
+  }
+
+  loadCheckoutItems();
+</script>
+
+</body>
+</html>
