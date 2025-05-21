@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - Your Nepali Products</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="w3-container w3-padding-32 w3-center">
+    <h2>Contact Us</h2>
+    <p>Have questions or want to get in touch? We'd love to hear from you!</p>
+
+    <form class="w3-container w3-card-4 w3-light-grey w3-text-black w3-margin" onsubmit="return submitContactForm(event)">
+      <p>
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" id="name" required>
+      </p>
+      <p>
+        <label>Email</label>
+        <input class="w3-input w3-border" type="email" id="email" required>
+      </p>
+      <p>
+        <label>Message</label>
+        <textarea class="w3-input w3-border" id="message" required></textarea>
+      </p>
+      <p>
+        <button class="w3-button w3-red" type="submit">Send Message</button>
+      </p>
+    </form>
+
+    <div id="contact-response" class="w3-panel w3-green w3-hide">
+      Thank you! We'll get back to you soon.
+    </div>
+  </div>
+
+  <script>
+    function submitContactForm(e) {
+      e.preventDefault();
+      document.getElementById("contact-response").classList.remove("w3-hide");
+      setTimeout(() => {
+        document.getElementById("contact-response").classList.add("w3-hide");
+        document.querySelector("form").reset();
+      }, 4000);
+      return false;
+    }
+  </script>
+
+</body>
+</html>
