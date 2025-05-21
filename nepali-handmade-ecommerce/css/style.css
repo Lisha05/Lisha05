@@ -1,0 +1,25 @@
+.small-logo {
+  width: 100px;
+  display: block;
+  margin: 10px auto;
+}
+
+.welcome-message {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 10px;
+  color: #2E2E2E;
+}
+
+.product {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #e60023;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}

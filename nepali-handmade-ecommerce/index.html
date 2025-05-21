@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Nepali Products</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <img src="images/logo.jpg" alt="Your Nepali Products Logo" class="w3-image small-logo" />
+
+  <div class="welcome-message">
+      Welcome to Your Nepali Products
+  </div>
+
+  <button disabled class="w3-button w3-disabled">Login</button>
+
+  <blockquote>
+      "Discover the beauty of Nepali craftsmanship."
+      <footer>- Nepali Proverb</footer>
+  </blockquote>
+
+  <nav class="w3-bar w3-black">
+    <a href="index.html" class="w3-bar-item w3-button">Home</a>
+    <a href="cart.html" class="w3-bar-item w3-button">Cart</a>
+  </nav>
+
+  <div class="w3-row-padding">
+    <div class="w3-third product">
+      <img src="images/products/nepali_product1.jpg" alt="Handmade Shawl" class="w3-image" />
+      <h3>Handmade Shawl</h3>
+      <p>रु 1800</p>
+      <button onclick="addToCart('Handmade Shawl', 1800)">Add to Cart</button>
+    </div>
+    <div class="w3-third product">
+      <img src="images/products/nepali_product2.jpg" alt="Clay Pot" class="w3-image" />
+      <h3>Clay Pot</h3>
+      <p>रु 900</p>
+      <button onclick="addToCart('Clay Pot', 900)">Add to Cart</button>
+    </div>
+    <div class="w3-third product">
+      <img src="images/products/nepali_product3.jpg" alt="Lokta Paper Notebook" class="w3-image" />
+      <h3>Lokta Paper Notebook</h3>
+      <p>रु 600</p>
+      <button onclick="addToCart('Lokta Paper Notebook', 600)">Add to Cart</button>
+    </div>
+  </div>
+
+  <footer class="w3-center w3-black w3-padding-16">
+    <p>&copy; 2025 Your Nepali Products. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
